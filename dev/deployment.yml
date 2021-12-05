@@ -16,4 +16,5 @@ spec:
       - name: iot_app
         image: cempassi/iot-app:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
+          name: iot-app 
