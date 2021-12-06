@@ -13,8 +13,8 @@ spec:
         app: iot-app
     spec:
       containers:
-      - name: iot-app
-        image: cempassi/iot-app:v1
-        ports:
-        - containerPort: 5000
-          name: iot-app
+        - name: iot-app
+          image: cempassi/iot-app:v1
+          ports:
+            - containerPort: 5000
+              name: iot-app
