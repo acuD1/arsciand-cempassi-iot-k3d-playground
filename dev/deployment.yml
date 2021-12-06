@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: iot_app
+  name: iot-app
 spec:
   selector:
     matchLabels:
-      app: iot_app
+      app: iot-app
   replicas: 2
   template:
     metadata:
       labels:
-        app: iot_app
+        app: iot-app
     spec:
       containers:
-      - name: iot_app
+      - name: iot-app
         image: cempassi/iot-app:v1
         ports:
         - containerPort: 5000
-          name: iot-app 
+          name: iot-app
