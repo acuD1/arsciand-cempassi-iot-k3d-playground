@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: iot-app
-  replicas: 19
+  replicas: 3
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: iot-app
-          image: cempassi/iot-app:v1
+          image: cempassi/iot-app:v2
           ports:
             - containerPort: 5000
               name: iot-app
