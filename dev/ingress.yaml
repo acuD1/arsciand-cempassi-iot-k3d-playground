@@ -3,16 +3,32 @@ kind: Ingress
 metadata:
    name: iot-app
    annotations:
-     ingress.kubernetes.io/ssl-redirect: "false"
+     kubernetes.io/ingress.class: "nginx"  
+     cert-manager.io/issuer: "letsencrypt-staging"
+# spec:
+#    rules:
+#     - http:
+#         paths:
+#           - pathType: Prefix
+#             path: "/"
+#             backend:
+#               service:
+#                 name: iot-app
+#                 port:
+#                   number: 80
 spec:
-   rules:
-    - http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: iot-app
-                port:
-                  number: 80
-
+  tls:
+  - hosts:
+    - iot.rke2-master.octolo.tech
+    secretName: test-iot
+  rules:
+  - host: iot.rke2-master.octolo.tech
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: iot-app
+            port:
+              number: 80
