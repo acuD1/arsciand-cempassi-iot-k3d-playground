@@ -21,7 +21,7 @@ spec:
   tls:
   - hosts:
     - iot.rke2-master.octolo.tech
-    secretName: test-iot
+    secretName: letsencrypt-staging
   rules:
   - host: iot.rke2-master.octolo.tech
     http:
