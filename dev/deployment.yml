@@ -12,6 +12,8 @@ spec:
       labels:
         app: iot-app
     spec:
+      nodeSelector:
+        env: dev
       containers:
         - name: iot-app
           image: cempassi/iot-app:v2
