@@ -8,6 +8,6 @@ spec:
   selector:
     app: iot-app
   ports:
-    - port: 80
+    - port: 443
       protocol: TCP
       targetPort: 5000
